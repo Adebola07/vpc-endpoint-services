@@ -1,4 +1,4 @@
-variable keypair-path {}
+variable public-key {}
 
 
 variable security_group_param {
@@ -149,7 +149,7 @@ resource "aws_instance" "workload" {
 
 resource "aws_key_pair" "keypair" {
   key_name   = "keypair"
-  public_key =  file(var.keypair-path)
+  public_key =  file(var.public-key)
 }
 
 data "aws_availability_zones" "available" {

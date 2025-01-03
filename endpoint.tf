@@ -30,3 +30,8 @@ resource "aws_vpc_endpoint_service" "SAAS" {
 }
 
 data "aws_caller_identity" "current" {}
+
+output "caller-id" {
+  value = data.aws_caller_identity.current
+  
+}
